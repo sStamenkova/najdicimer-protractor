@@ -2,7 +2,8 @@
 exports.config = {
 
     specs: [
-        "scenarios.js"
+        "./sign-up-page/signup.spec.js",
+        "./login-page/login.spec.js"
     ],
 
     capabilities: {
