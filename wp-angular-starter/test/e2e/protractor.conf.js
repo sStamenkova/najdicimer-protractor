@@ -2,8 +2,7 @@
 exports.config = {
 
     specs: [
-        "./sign-up-page/signup.spec.js",
-        "./login-page/login.spec.js"
+        "./new-listing-page/newlisting.spec.js"
     ],
 
     capabilities: {

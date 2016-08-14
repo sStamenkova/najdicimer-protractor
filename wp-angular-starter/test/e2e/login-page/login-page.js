@@ -31,7 +31,7 @@ var LoginPage = function(){
 
     this.goToSignUp = function(){
         this.goToSignUpButton.click();
-    }
+    };
 };
 
 module.exports = LoginPage;

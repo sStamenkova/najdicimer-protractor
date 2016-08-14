@@ -69,7 +69,7 @@
                                      ng-if="submitted || signup_form.email.$touched">
                                     <p ng-message="required">Внеси email</p>
                                 </div>
-                                <div class="help-block" ng-messages="signup_form.email.$error" ng-if="submitted">
+                                <div class="help-block" ng-messages="signup_form.email.$error" ng-if="submitted || signup_form.email.$touched">
                                     <p ng-message="email">Внеси валиден email</p>
                                 </div>
 
