@@ -18,7 +18,7 @@ var NewListing = function(){
         this.title.sendKeys(title);
         this.content.click().sendKeys(content);
         this.location.sendKeys(location);
-        browser.sleep(1000);
+        browser.sleep(2000);
         element(by.css('.container')).click();
         this.postListing.click();
     };

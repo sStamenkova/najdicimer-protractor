@@ -8,11 +8,14 @@ describe('New Listing Page Tests', function () {
     var newListing;
     var loginPage;
 
-    beforeEach(function(){
+    beforeAll(function () {
         loginPage = new LoginPage();
-        newListing = new NewListing();
         loginPage.get();
         loginPage.login('test', 'password');
+    });
+
+    beforeEach(function(){
+        newListing = new NewListing();
         newListing.get();
     });
 
@@ -44,7 +47,26 @@ describe('New Listing Page Tests', function () {
         expect(error.getText()).toEqual('Внеси локација на огласот');
     });
 
-    afterEach(function () {
-       loginPage.logout();
+    it('should show guide1 when clicked', function(){
+        element(by.id('guide1')).click();
+        browser.sleep(1000);
+        expect(element(by.id('collapse1')).isDisplayed()).toBe(true);
     });
+
+    it('should show guide2 when clicked', function(){
+        element(by.id('guide2')).click();
+        browser.sleep(1000);
+        expect(element(by.id('collapse2')).isDisplayed()).toBe(true);
+    });
+
+    it('should show guide3 when clicked', function(){
+        element(by.id('guide3')).click();
+        browser.sleep(1000);
+        expect(element(by.id('collapse3')).isDisplayed()).toBe(true);
+    });
+
+    afterAll(function () {
+        loginPage.logout();
+    });
+
 });
