@@ -2,7 +2,7 @@
 exports.config = {
 
     specs: [
-        "./new-listing-page/newlisting.spec.js"
+        "./home-page/homepage.spec.js"
     ],
 
     capabilities: {
