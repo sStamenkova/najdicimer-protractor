@@ -87,3 +87,7 @@
 2016-08-17 10:47:17,957 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:301] Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
 2016-08-17 10:47:17,968 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
 2016-08-17 10:47:18,033 INFO [localhost-startStop-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:504] FrameworkServlet 'dispatcherServlet': initialization completed in 1938 ms
+2016-08-17 12:43:02,513 WARN [http-bio-8080-exec-4] o.h.e.j.s.SqlExceptionHelper [SqlExceptionHelper.java:144] SQL Error: 1062, SQLState: 23000
+2016-08-17 12:43:02,517 ERROR [http-bio-8080-exec-4] o.h.e.j.s.SqlExceptionHelper [SqlExceptionHelper.java:146] Duplicate entry 'test' for key 'UK_r43af9ap4edm43mmtq01oddj6'
+2016-08-17 12:43:02,534 WARN [http-bio-8080-exec-4] o.h.e.j.s.SqlExceptionHelper [SqlExceptionHelper.java:232] SQL Warning Code: 1062, SQLState: 23000
+2016-08-17 12:43:02,535 WARN [http-bio-8080-exec-4] o.h.e.j.s.SqlExceptionHelper [SqlExceptionHelper.java:233] Duplicate entry 'test' for key 'UK_r43af9ap4edm43mmtq01oddj6'

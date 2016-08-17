@@ -2,7 +2,10 @@
 exports.config = {
 
     specs: [
-        "./home-page/homepage.spec.js"
+        "./home-page/homepage.spec.js",
+        "./sign-up-page/signup.spec.js",
+        "./login-page/login.spec.js",
+        "./new-listing-page/newlisting.spec.js"
     ],
 
     capabilities: {
