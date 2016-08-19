@@ -31,7 +31,7 @@ WPAngularStarter.factory('UserService', ['$http', 'apiURL', function ($http, api
         },
 
         isUnique: function (username) {
-            return $http.get("http://localhost:8080/servlet-showcase/api/users/" + username);
+            return $http.get("http://localhost:8080/servlet-showcase/api/user/by/" + username);
         },
 
         loginUser: function (data, config) {

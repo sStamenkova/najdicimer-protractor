@@ -37,6 +37,12 @@ public class UserResource {
         return userService.getAllAdmins();
     }
 
+    @RequestMapping(value = "/by/{username}", method = RequestMethod.GET)
+    public User getUser(@PathVariable String username)
+    {
+        return userService.getUserByUsername(username);
+    }
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public User getUser(@PathVariable Long id)
     {

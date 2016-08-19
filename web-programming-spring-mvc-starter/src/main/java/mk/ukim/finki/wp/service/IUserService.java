@@ -20,6 +20,7 @@ public interface IUserService {
     public void update(User user);
     public User getUser(Long id);
     public List<User> getAllUsers();
+    public User getUserByUsername(String username);
     public List<User> getAllAdmins();
     public void sendMessage(String content, Long userFrom, Long userTo);
     public List<Message> getInbox(Long userId);

@@ -8,6 +8,7 @@ var HomePage = function(){
     this.searchButton = element(by.css('.btn-secondary'));
     this.loginButton = element(by.id('loginButton'));
     this.signupButton = element(by.id('signupButton'));
+    this.listingsButton = element(by.id('showListings'));
     
     this.get = function(){
       browser.get('http://localhost:8000/#/');
@@ -24,6 +25,10 @@ var HomePage = function(){
 
     this.goToSignUp = function(){
       this.signupButton.click();
+    };
+
+    this.goToListings = function(){
+      this.listingsButton.click();
     };
 };
 

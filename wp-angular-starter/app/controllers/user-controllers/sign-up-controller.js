@@ -24,7 +24,7 @@ WPAngularStarter.controller('signupController', ['$scope', '$state', 'notificati
         convertMonth();
         $scope.birthDate = calculateDate();
 
-        if (($scope.name != '') && ($scope.surname != '') && ($scope.username != '') && ($scope.email != '') && ($scope.password != '') && ($scope.signup_form.email.$valid) && ($scope.password == $scope.confirm)) {
+        if (($scope.name != '') && ($scope.surname != '') && ($scope.username != '') && ($scope.signup_form.username.$valid) && ($scope.email != '') && ($scope.password != '') && ($scope.signup_form.email.$valid) && ($scope.password == $scope.confirm)) {
 
 
             var data = $.param({

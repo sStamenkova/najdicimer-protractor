@@ -25,4 +25,9 @@ describe('Home Page Tests', function(){
         homePage.goToSignUp();
         expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/#/signup');
     });
+
+    it('should redirect to listings page on navigation click', function () {
+       homePage.goToListings();
+       expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/#/listings/');
+    });
 });

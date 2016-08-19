@@ -31,6 +31,7 @@ WPAngularStarter.controller('loginController', ['$scope', 'notifications',  '$st
                     $rootScope.isLoggedIn = true;
                     $rootScope.isAdmin = data.isAdmin;
                     $rootScope.userName = data.username;
+                    $rootScope.userId = data.id;
 
                     notifications.showSuccess(data.username + ', добредојде назад!');
 

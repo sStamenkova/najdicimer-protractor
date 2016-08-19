@@ -14,11 +14,14 @@ WPAngularStarter.controller('userProfileController', function ($scope, $state, n
     });
 
     $scope.editProfile = function () {
-        UserService.editUser($scope.user).then(function () {
-            $state.go('home');
 
-            notifications.showWarning('Промените се зачувани.');
-            
-        });
+        if(($scope.user.username != '') && ($scope.profile_form.username.$valid) && ($scope.user.name != '') && ($scope.user.surname != '') && ($scope.user.email != '') && ($scope.profile_form.email.$valid) && ($scope.user.password != '')) {
+            UserService.editUser($scope.user).then(function () {
+                $state.go('home');
+
+                notifications.showWarning('Промените се зачувани.');
+
+            });
+        }
     }
 });

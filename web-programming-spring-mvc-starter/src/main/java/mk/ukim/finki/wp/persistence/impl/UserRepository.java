@@ -28,7 +28,7 @@ public class UserRepository implements IUserRepository {
         baseRepository.saveOrUpdate(user);
     }
 
-    private List<User> findByUsername(final String username){
+    public List<User> findByUsername(final String username){
         return baseRepository.find(User.class, new PredicateBuilder<User>() {
             @Override
             public Predicate toPredicate(CriteriaBuilder cb, CriteriaQuery<User> cq, Root<User> root) {
@@ -52,6 +52,7 @@ public class UserRepository implements IUserRepository {
     public User findById(Long id) {
         return baseRepository.getById(User.class, id);
     }
+
 
     @Override
     public List<User> findAll() {

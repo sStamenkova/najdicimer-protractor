@@ -13,6 +13,7 @@ public interface IUserRepository {
     public void save(User user);
     public User logIn(String username, String password);
     public User findById(Long id);
+    public List<User> findByUsername(String username);
     public List<User> findAll();
     public void delete(Long id);
     public List<User> getAllAdmins();

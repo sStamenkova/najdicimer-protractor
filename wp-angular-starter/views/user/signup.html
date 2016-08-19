@@ -95,7 +95,10 @@
                                 <div class="help-block" ng-messages="signup_form.username.$error"
                                      ng-if="submitted || signup_form.username.$touched">
                                     <p ng-message="required">Внеси корисничко име</p>
+                                </div>
 
+                                <div class="help-block" ng-messages="signup_form.username.$error"
+                                     ng-if="submitted || signup_form.username.$touched">
                                     <p ng-message="unique">Корисничкото име е зафатено</p>
                                 </div>
 

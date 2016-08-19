@@ -15,7 +15,7 @@ WPAngularStarter.directive('validUsername', ['UserService', function(UserService
                     ngModel.$setValidity('unique', true);
                     UserService.isUnique(elm.val()).success(function (data) {
 
-                        if (data) {
+                        if (data.id != null) {
                             ngModel.$setValidity('unique', false);
                         }
                     });

@@ -116,6 +116,11 @@ public class UserService implements IUserService {
         return userRepository.findAll();
     }
 
+    @Override
+    public User getUserByUsername(String username) {
+        return userRepository.findByUsername(username).get(0);
+    }
+
     public List<User> getAllAdmins() {
         return userRepository.getAllAdmins();
     }

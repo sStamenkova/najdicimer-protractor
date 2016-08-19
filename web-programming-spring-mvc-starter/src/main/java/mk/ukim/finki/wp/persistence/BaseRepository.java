@@ -43,6 +43,7 @@ public class BaseRepository {
         return query.getSingleResult();
     }
 
+
     public <T> List<T> find(Class<T> type, PredicateBuilder<T> predicateBuilder) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<T> cq = cb.createQuery(type);

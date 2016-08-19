@@ -1,45 +1,73 @@
 <div class="container" style="margin-top:6%;">
     <div class="row">
         <div class="col-md-6">
+           <form ng-submit="editProfile()" name="profile_form" novalidate>
+            <div ng-class="{ 'has-error': (profile_form.username.$touched && profile_form.username.$invalid) || (submitted && profile_form.username.$invalid) }">
             <div class="form-group"><label>Корисничко име</label>
 
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <input class="form-control" ng-model="user.username">
+                    <input class="form-control" ng-model="user.username" name="username" required valid-username>
                 </div>
             </div>
+
+            <div class="help-block" ng-messages="profile_form.username.$error" ng-if="submitted || profile_form.username.$touched">
+               <p ng-message="required">Внеси корисничко име</p>
+            </div>
+
+            <div class="help-block" ng-messages="profile_form.username.$error" ng-if="submitted || profile_form.username.$touched">
+               <p ng-message="unique">Корисничкото име е зафатено</p>
+            </div>
+            </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" ng-class="{ 'has-error': (profile_form.name.$touched && profile_form.name.$invalid) || (submitted && profile_form.name.$invalid) }">
                     <div class="form-group">
                         <label>Име</label>
 
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-male"></i></span>
-                            <input class="form-control" ng-model="user.name">
+                            <input class="form-control" ng-model="user.name" name="name" required>
                         </div>
                     </div>
+                    <div class="help-block" ng-messages="profile_form.name.$error" ng-if="submitted || profile_form.name.$touched">
+                        <p ng-message="required">Внеси име</p>
+                    </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" ng-class="{ 'has-error': (profile_form.surname.$touched && profile_form.surname.$invalid) || (submitted && profile_form.surname.$invalid) }">
                     <div class="form-group">
                         <label>Презиме</label>
 
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-male"></i></span>
-                            <input class="form-control" ng-model="user.surname">
+                            <input class="form-control" ng-model="user.surname" name="surname" required>
                         </div>
+                    </div>
+
+                    <div class="help-block" ng-messages="profile_form.surname.$error" ng-if="submitted || profile_form.surname.$touched">
+                        <p ng-message="required">Внеси презиме</p>
                     </div>
                 </div>
             </div>
+
+            <div ng-class="{ 'has-error': (profile_form.email.$touched && profile_form.email.$invalid) || (submitted && profile_form.email.$invalid) }">
             <div class="form-group">
                 <label>e-mail</label>
 
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                    <input class="form-control" ng-model="user.email">
+                    <input type="email" class="form-control" ng-model="user.email" name="email" required>
                 </div>
             </div>
 
-            <div class="form-group">
+                <div class="help-block" ng-messages="profile_form.email.$error" ng-if="submitted || profile_form.email.$touched">
+                    <p ng-message="required">Внеси email</p>
+                </div>
+                <div class="help-block" ng-messages="profile_form.email.$error" ng-if="submitted || profile_form.email.$touched">
+                    <p ng-message="email">Внеси валиден email</p>
+                </div>
+            </div>
+
+               <div class="form-group">
                 <label>Дата на раѓање</label>
 
                 <div class="input-group">
@@ -48,22 +76,30 @@
                 </div>
             </div>
 
+            <div ng-class="{ 'has-error': (profile_form.password.$touched && profile_form.password.$invalid) || (submitted && profile_form.password.$invalid) }">
             <div class="form-group">
                 <label>Лозинка</label>
 
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                    <input class="form-control" type="text" ng-model="user.password"/>
+                    <input class="form-control" type="text" ng-model="user.password" name="password" required/>
+                </div>
+            </div>
+                <div class="help-block" ng-messages="profile_form.password.$error" ng-if="submitted || profile_form.password.$touched">
+                    <p ng-message="required">Внеси лозинка</p>
                 </div>
             </div>
             <br/>
 
             <div class="text-center">
-                <button data-ng-click="editProfile();" class="btn btn-warning ">
+                <button type="submit" class="btn btn-warning " ng-click="submitted=true"
+                        ng-keyup="submitted=false">
                     <i class="fa fa-pencil-square-o" style="color:#FFFFFF;"></i> Зачувај промени
                 </button>
                 <button class="btn btn-default" ui-sref="home">Откажи</button>
+
             </div>
+           </form>
         </div>
         <div class="col-md-offset-1 col-md-5">
             <h2>Мои огласи</h2>
