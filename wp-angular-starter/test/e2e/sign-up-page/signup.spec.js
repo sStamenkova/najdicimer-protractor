@@ -18,7 +18,8 @@ describe('Sign Up Page Tests', function(){
 
     it('should not register a user with an existing username', function(){
         signupPage.signup('test1', 'test1', 'test1@example.com', 'test', 'password', 'password');
-        expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/#/signup');
+        var error = element.all(by.css('.help-block.ng-active')).first().getText();
+        expect(error).toEqual('Корисничкото име е зафатено');
     });
 
     it('should show an error message when signing up a user with an invalid email', function () {
