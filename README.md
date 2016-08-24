@@ -6,3 +6,19 @@ The project represents the source code for a single-page web application intende
 
 ## Development
 The project is being tested using Protractor, which is an end-to-end test framework for Angular JS.
+
+## How to run?
+First open the web-programming-spring-mvc-starter in any IDE and run the Maven configuration. This will deploy your API on
+
+    http://localhost:8080
+Next, open the wp-angular-starter in a new tab of your IDE. Navigate to the wp-angular-starter folder using the command line and run
+
+    npm install
+    bower install
+This will install the node modules and bower components which are needed to start your app. In the 'gulpfile.js' file run all the previous tasks then run the 'build' task, and after it finishes building run the 'default' task. The application will be deployed on
+
+    http://localhost:8000
+In order to run the protractor tests, navigate in the wp-angular-starter folder using the command line and type
+
+    npm run protractor
+This will run the tests and provide their output on the command line.
