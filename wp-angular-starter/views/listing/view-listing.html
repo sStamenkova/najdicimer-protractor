@@ -28,10 +28,10 @@
 
                     <div ng-show="show" class="text-right">
                         <br/><br/>
-                        <button data-ng-show = "isAuthor" class="btn btn-warning" ng-click="editListing()">
+                        <button data-ng-show = "isAuthor" id="editListing" class="btn btn-warning" ng-click="editListing()">
                             <i class="fa fa-pencil-square-o fa-lg"></i>
                         </button>
-                        <button data-ng-show = "isAuthor" class="btn btn-danger" data-ng-click="confirmDelete()">
+                        <button data-ng-show = "isAuthor" id="deleteListing" class="btn btn-danger" data-ng-click="confirmDelete()">
                             <i class="fa fa-trash fa-lg"></i>
                         </button>
                     </div>
@@ -113,7 +113,7 @@
             <button type="button" ng-click="confirmDelete()" class="btn btn-default">
                 <i class="fa fa-times"></i> Откажи
             </button>
-            <button type="submit" class="btn btn-danger" data-ng-click="deleteListing()">
+            <button type="submit" id="confirmDelete" class="btn btn-danger" data-ng-click="deleteListing()">
                 <i class="fa fa-trash"></i> Избриши
             </button>
         </form>

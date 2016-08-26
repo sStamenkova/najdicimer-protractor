@@ -18,6 +18,12 @@ describe('Login Page Tests', function(){
         loginPage.logout();
     });
 
+    it('should redirect to admin page when logged in as admin', function () {
+        loginPage.login('admin', 'admin12345');
+        expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/admin/#/');
+        loginPage.logout();
+    });
+
     it('should show an error message when logging in a user with incorrect credentials', function(){
         loginPage.login('test', 'pass');
         var error = element(by.id('err-message'));

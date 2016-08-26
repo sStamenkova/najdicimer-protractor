@@ -1,19 +1,34 @@
 <div class="container">
     <div class="row top-div">
         <div class="col-md-5 ">
-            <div class="form-group">
+            <form ng-submit="editListing()" name="edit_listing_form" novalidate>
+            <div class="form-group" ng-class="{ 'has-error': (edit_listing_form.title.$invalid && edit_listing_form.title.$touched) || (submitted && edit_listing_form.title.$invalid) }">
                 <label>Измени наслов</label>
-                <input class="form-control" type="text" name="title" ng-model="listing.title">
+                <input class="form-control" type="text" name="title" ng-model="listing.title" required>
+
+                <div class="help-block" ng-messages="edit_listing_form.title.$error"
+                     ng-if="submitted || edit_listing_form.title.$touched">
+                    <p ng-message="required">Внеси наслов на огласот</p>
+                </div>
+                {{listing.title}}
             </div>
-            <div class="form-group">
+            <div class="form-group" ng-class="{ 'has-error': (edit_listing_form.content.$touched && edit_listing_form.content.$invalid) || (submitted && edit_listing_form.content.$invalid) }">
                 <label>Измени содржина</label>
-                <textarea ui-tinymce = "tinymceOptions" name="content" style="resize: none;" ng-model="listing.content" rows=10 class="form-control"></textarea>
+                <textarea ui-tinymce = "tinymceOptions" name="content" style="resize: none;" ng-model="listing.content" rows=10 class="form-control" required></textarea>
+
+                <div class="help-block" ng-messages="edit_listing_form.content.$error"
+                     ng-if="submitted || edit_listing_form.content.$touched">
+                    <p ng-message="required">Внеси оглас</p>
+                </div>
+                {{listing.content}}
             </div>
             <div class="text-right ">
-                <button class="btn btn-warning" ng-click="editListing()"><span
-                        class="fa fa-pencil-square-o fa-lg"></span>
+                <button id="editListingSave" class="btn btn-warning" ng-click="submitted=true"
+                        ng-keyup="submitted=false">
+                    <span class="fa fa-pencil-square-o fa-lg"></span>
                 </button>
             </div>
+            </form>
         </div>
 
         <div class="col-md-7">

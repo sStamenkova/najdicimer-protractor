@@ -4,8 +4,7 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-1">
                 <form enctype="multipart/form-data" ng-submit="createListing()" name="listing_form" novalidate>
-                    <div class="form-group"
-                         ng-class="{ 'has-error': (submitted && listing_form.title.$invalid) }">
+                    <div class="form-group" ng-class="{ 'has-error': (submitted && listing_form.title.$invalid) }">
                         <input class="form-control" type="text" name="title" ng-model="title"
                                placeholder="Наслов..." required>
 
