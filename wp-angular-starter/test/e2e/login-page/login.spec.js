@@ -21,6 +21,7 @@ describe('Login Page Tests', function(){
     it('should redirect to admin page when logged in as admin', function () {
         loginPage.login('admin', 'admin12345');
         expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/admin/#/');
+        browser.get('http://localhost:8000/#/');
         loginPage.logout();
     });
 

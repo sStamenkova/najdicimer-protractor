@@ -8,7 +8,7 @@ var ListingInteraction = function(){
     };
 
     this.editListing = function(title, content){
-        var listing = element.all(by.css('.box')).get(1);
+        var listing = element.all(by.css('.box')).get(0);
         listing.click();
         browser.sleep(2000);
         var editButton = element(by.id('editListing'));
@@ -28,7 +28,7 @@ var ListingInteraction = function(){
     };
 
     this.editTitle = function(title){
-        var listing = element.all(by.css('.box')).get(1);
+        var listing = element.all(by.css('.box')).get(0);
         listing.click();
         browser.sleep(2000);
         var editButton = element(by.id('editListing'));
@@ -43,7 +43,7 @@ var ListingInteraction = function(){
     };
 
     this.editContent = function(content){
-        var listing = element.all(by.css('.box')).get(1);
+        var listing = element.all(by.css('.box')).get(0);
         listing.click();
         browser.sleep(2000);
         var editButton = element(by.id('editListing'));
@@ -59,13 +59,41 @@ var ListingInteraction = function(){
     };
 
     this.deleteListing = function(){
-        var listing = element.all(by.css('.box')).get(1);
+        var listing = element.all(by.css('.box')).get(0);
         listing.click();
         browser.sleep(2000);
         var deleteButton = element(by.id('deleteListing'));
         deleteButton.click();
         browser.sleep(2000);
         var confirm = element(by.id('confirmDelete'));
+        confirm.click();
+        browser.sleep(1000);
+    };
+
+    this.sendReport = function (content) {
+        var listing = element.all(by.css('.box')).get(0);
+        listing.click();
+        browser.sleep(2000);
+        var reportButton = element(by.id('sendReport'));
+        reportButton.click();
+        browser.sleep(2000);
+        var reportContent = element(by.model('report.content'));
+        var confirm = element(by.id('sendReportSave'));
+        reportContent.sendKeys(content);
+        confirm.click();
+        browser.sleep(1000);
+    };
+
+    this.sendMessage = function(message){
+        var listing = element.all(by.css('.box')).get(0);
+        listing.click();
+        browser.sleep(2000);
+        var messageButton = element(by.id('sendMessage'));
+        messageButton.click();
+        browser.sleep(2000);
+        var messageContent = element(by.model('message.content'));
+        var confirm = element(by.id('sendMessageSave'));
+        messageContent.sendKeys(message);
         confirm.click();
         browser.sleep(1000);
     };

@@ -12,8 +12,8 @@ describe('Home Page Tests', function(){
     });
 
     it('should perform a search on a given keyword', function(){
-        homePage.search('example');
-        expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/#/search/example');
+        homePage.search('oglas');
+        expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/#/search/oglas');
     });
 
     it('should redirect to login page on navigation click', function () {

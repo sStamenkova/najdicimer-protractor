@@ -2,7 +2,7 @@
     <div class="row top-div">
         <div class="col-md-5 ">
             <div data-ng-show = "!isAuthor && isLoggedIn" class="report-btn">
-                <button class="btn btn-danger btn-circle" data-ng-click="toggleReportModal()">
+                <button id="sendReport" class="btn btn-danger btn-circle" data-ng-click="toggleReportModal()">
                     <i class="fa fa-flag fa-lg"></i>
                 </button>
             </div>
@@ -18,7 +18,7 @@
                     <div data-ng-hide = "isAuthor || !isLoggedIn" class="pull-left">
                         Контактирај со <span>{{listing.user.username}}</span>
                         <div>
-                            <button class="btn btn-warning"
+                            <button class="btn btn-warning" id="sendMessage"
                                     data-ng-click="toggleMessageModal();">
                                 <i class="fa fa-envelope fa-lg"></i>
                             </button>
@@ -79,7 +79,7 @@
             <button type="button" class="btn btn-default" data-ng-click="toggleReportModal();"><i
                     class="fa fa-times"></i> Откажи
             </button>
-            <button type="submit" class="btn btn-danger" data-ng-click="reportPost();"><i class="fa fa-flag "></i>
+            <button type="submit" id="sendReportSave" class="btn btn-danger" data-ng-click="reportPost();"><i class="fa fa-flag "></i>
                 Пријави
             </button>
         </form>
@@ -100,7 +100,7 @@
             <button type="button" class="btn btn-default" data-ng-click="toggleMessageModal();"><i
                     class="fa fa-times"></i> Откажи
             </button>
-            <button type="submit" class="btn btn-success" data-ng-click="sendMessage();"><i class="fa fa-send"></i>
+            <button type="submit" id="sendMessageSave" class="btn btn-success" data-ng-click="sendMessage();"><i class="fa fa-send"></i>
                 Прати порака
             </button>
         </form>
