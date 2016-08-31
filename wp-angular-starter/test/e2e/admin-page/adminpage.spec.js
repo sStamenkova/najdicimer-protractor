@@ -1,8 +1,8 @@
 /**
  * Created by SimonaS on 22/08/2016.
  */
-var AdminPage = request('./admin-page.js');
-var LoginPage = request('../login-page/login-page.js');
+var AdminPage = require('./admin-page.js');
+var LoginPage = require('../login-page/login-page.js');
 
 describe('Admin Page Tests', function () {
     var adminPage;

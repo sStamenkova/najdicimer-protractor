@@ -7,7 +7,9 @@ exports.config = {
         "./login-page/login.spec.js",
         "./new-listing-page/newlisting.spec.js",
         "./listing-interaction/listinginteraction.spec.js",
-        "./profile-page/profilepage.spec.js"
+        "./profile-page/profilepage.spec.js",
+        "./admin-page/adminpage.spec.js",
+        "./admin-reports-page/adminreports.js"
     ],
 
     capabilities: {
