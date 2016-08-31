@@ -10,15 +10,15 @@
         </tr>
         <tr dir-paginate="user in users | itemsPerPage: usersPerPage" current-page="currentPage">
             <td>{{user.id}}</td>
-            <td>{{user.name}}</td>
+            <td id="username">{{user.name}}</td>
             <td>{{user.surname}}</td>
             <td>{{user.username}}</td>
             <td>
-                <button class="btn btn-danger" data-ng-click="removeUser(user.id);"><i class="fa fa-trash"></i> Избриши
+                <button id="deleteUser" class="btn btn-danger" data-ng-click="removeUser(user.id);"><i class="fa fa-trash"></i> Избриши
                 </button>
             </td>
             <td>
-                <button class="btn btn-primary" ui-sref="app.userDetails({id:user.id})"><i class="fa fa-eye"></i>
+                <button id="editUser" class="btn btn-primary" ui-sref="app.userDetails({id:user.id})"><i class="fa fa-eye"></i>
                     Види/Измени
                 </button>
             </td>

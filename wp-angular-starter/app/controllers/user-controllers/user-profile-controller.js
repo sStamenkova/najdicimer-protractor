@@ -15,7 +15,7 @@ WPAngularStarter.controller('userProfileController', function ($scope, $rootScop
 
     $scope.editProfile = function () {
 
-        if(($scope.user.username != '') && ($scope.profile_form.username.$valid) && ($scope.user.name != '') && ($scope.user.surname != '') && ($scope.user.email != '') && ($scope.profile_form.email.$valid) && ($scope.user.password != '')) {
+        if(($scope.user.username != '') && ($scope.profile_form.username.$valid) && ($scope.profile_form.date.$valid) && ($scope.user.name != '') && ($scope.user.surname != '') && ($scope.user.email != '') && ($scope.profile_form.email.$valid) && ($scope.user.password != '')) {
             UserService.editUser($scope.user).then(function () {
                 $rootScope.userName = $scope.user.username;
                 $state.go('home');

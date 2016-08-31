@@ -20,12 +20,13 @@ WPAngularStarter.controller("EditUserDetailsController", ["$scope", "UserService
         });
 
     $scope.save = function (){
-        UserService.updateUser($stateParams.id, $scope.user.name, $scope.user.surname, $scope.user.email, $scope.user.username, $scope.user.password, $scope.user.birthDate).then(function (){
-                toastr.success("User updated successfully!!");
-            },
-            function (){
-                toastr.error("Error updating the user!!");
-            });
-        $scope.$parent.user = $scope.user;
+            console.log('inside');
+            UserService.updateUser($stateParams.id, $scope.user.name, $scope.user.surname, $scope.user.email, $scope.user.username, $scope.user.password, $scope.user.birthDate).then(function () {
+                    toastr.success("User updated successfully!!");
+                },
+                function () {
+                    toastr.error("Error updating the user!!");
+                });
+            $scope.$parent.user = $scope.user;
     };
 }]);

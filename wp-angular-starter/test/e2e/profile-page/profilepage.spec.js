@@ -97,6 +97,12 @@ describe('Profile Page Tests', function () {
         expect(error).toEqual('Внеси валиден email');
     });
 
+    it('should show an error message when trying to save a user with an invalid date', function () {
+        profilePage.changeDate('1/20/2003');
+        var error = element.all(by.css('.help-block.ng-active')).first().getText();
+        expect(error).toEqual('Внеси валидна дата');
+    });
+
     it('should show an error message when trying to save a user with an empty username', function () {
         profilePage.changeUsername('');
         var error = element.all(by.css('.help-block.ng-active')).first().getText();

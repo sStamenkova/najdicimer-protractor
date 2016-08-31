@@ -9,7 +9,8 @@ exports.config = {
         "./listing-interaction/listinginteraction.spec.js",
         "./profile-page/profilepage.spec.js",
         "./admin-page/adminpage.spec.js",
-        "./admin-reports-page/adminreports.js"
+        "./admin-reports-page/adminreportspage.spec.js",
+        "./admin-users-page/adminuserspage.spec.js"
     ],
 
     capabilities: {

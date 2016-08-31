@@ -8,6 +8,7 @@ var WPAngularStarter = angular.module('admin-angular-starter', [
   'angular-loading-bar',
   'ui.select',
   'ngQuickDate',
+  'ngMessages',
   'angularUtils.directives.dirPagination']);
 
   WPAngularStarter.constant("serverURL", "http://localhost:8080/servlet-showcase");

@@ -88,3 +88,8 @@
 2016-08-31 10:42:43,871 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:301] Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
 2016-08-31 10:42:43,880 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
 2016-08-31 10:42:43,928 INFO [localhost-startStop-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:504] FrameworkServlet 'dispatcherServlet': initialization completed in 1758 ms
+2016-08-31 17:43:15,142 WARN [http-bio-8080-exec-31] o.h.e.j.s.SqlExceptionHelper [SqlExceptionHelper.java:144] SQL Error: 1062, SQLState: 23000
+2016-08-31 17:43:15,169 ERROR [http-bio-8080-exec-31] o.h.e.j.s.SqlExceptionHelper [SqlExceptionHelper.java:146] Duplicate entry 'admin' for key 'UK_r43af9ap4edm43mmtq01oddj6'
+2016-08-31 17:43:15,189 INFO [http-bio-8080-exec-31] o.h.e.j.b.i.AbstractBatchImpl [AbstractBatchImpl.java:208] HHH000010: On release of batch it still contained JDBC statements
+2016-08-31 17:43:15,190 WARN [http-bio-8080-exec-31] o.h.e.j.s.SqlExceptionHelper [SqlExceptionHelper.java:232] SQL Warning Code: 1062, SQLState: 23000
+2016-08-31 17:43:15,191 WARN [http-bio-8080-exec-31] o.h.e.j.s.SqlExceptionHelper [SqlExceptionHelper.java:233] Duplicate entry 'admin' for key 'UK_r43af9ap4edm43mmtq01oddj6'

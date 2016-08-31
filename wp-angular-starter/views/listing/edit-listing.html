@@ -10,7 +10,6 @@
                      ng-if="submitted || edit_listing_form.title.$touched">
                     <p ng-message="required">Внеси наслов на огласот</p>
                 </div>
-                {{listing.title}}
             </div>
             <div class="form-group" ng-class="{ 'has-error': (edit_listing_form.content.$touched && edit_listing_form.content.$invalid) || (submitted && edit_listing_form.content.$invalid) }">
                 <label>Измени содржина</label>
@@ -20,7 +19,6 @@
                      ng-if="submitted || edit_listing_form.content.$touched">
                     <p ng-message="required">Внеси оглас</p>
                 </div>
-                {{listing.content}}
             </div>
             <div class="text-right ">
                 <button id="editListingSave" class="btn btn-warning" ng-click="submitted=true"
