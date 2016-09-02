@@ -51,4 +51,9 @@ describe('Admin Users Page Tests', function () {
         var user = element.all(by.id('username')).last();
         expect(user).not.toEqual('test');
     });
+
+    afterAll(function(){
+        browser.get('http://localhost:8000/#/');
+        loginPage.logout();
+    });
 });

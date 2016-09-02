@@ -3,6 +3,8 @@
  */
 var ListingInteraction = function(){
 
+    this.user = element(by.id('userName'));
+
     this.get = function(){
         browser.get('http://localhost:8000/#/listings/');
     };
@@ -71,7 +73,7 @@ var ListingInteraction = function(){
     };
 
     this.sendReport = function (content) {
-        var listing = element.all(by.css('.box')).get(0);
+        var listing = element.all(by.css('.box')).get(1);
         listing.click();
         browser.sleep(2000);
         var reportButton = element(by.id('sendReport'));
@@ -85,7 +87,7 @@ var ListingInteraction = function(){
     };
 
     this.sendMessage = function(message){
-        var listing = element.all(by.css('.box')).get(0);
+        var listing = element.all(by.css('.box')).get(1);
         listing.click();
         browser.sleep(2000);
         var messageButton = element(by.id('sendMessage'));
@@ -96,6 +98,14 @@ var ListingInteraction = function(){
         messageContent.sendKeys(message);
         confirm.click();
         browser.sleep(1000);
+    };
+
+    this.verifyMessage = function () {
+        this.user.click();
+        var sentMessages = element(by.id('sentMessages'));
+        sentMessages.click();
+        var readMessage = element.all(by.id('readMessage')).first();
+        readMessage.click();
     };
 };
 

@@ -35,4 +35,7 @@ describe('Admin Page Tests', function () {
         expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/#/');
     });
 
+    afterAll(function(){
+        loginPage.logout();
+    });
 });

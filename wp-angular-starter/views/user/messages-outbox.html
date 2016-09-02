@@ -6,11 +6,11 @@
             <div class="media">
                 <div class="media-left">
                     <a href="#">
-                        <img style="width: 50px;" class="media-object" data-ng-src = "{{serverURL + message.userTo.imageURL}}" alt="{{message.userTo.username}}">
+                        <img style="width: 50px;" class="media-object" data-ng-src = "{{serverURL + message.userFrom.imageURL}}" alt="{{message.userFrom.username}}">
                     </a>
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading"><i class="fa fa-user"></i> {{message.userTo.username}} <small><i class="fa fa-clock-o"></i> {{message.sentOn}}</small></h4>
+                    <h4 class="media-heading"><i class="fa fa-user"></i> {{message.userFrom.username}} <small><i class="fa fa-clock-o"></i> {{message.sentOn}}</small></h4>
                     <p>{{message.content.substring(0, 100);}}</p>
                 </div>
                 <div class="media-right">

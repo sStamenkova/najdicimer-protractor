@@ -44,18 +44,27 @@ describe('Listing Interaction Tests', function () {
         expect(error.getText()).toEqual('Внеси оглас');
     });
 
+    it('should report an inappropriate listing', function () {
+        listingInteraction.sendReport('Inappropriate content');
+        expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/#/listing/24');
+    });
+    
+    it('should send a message to a user', function () {
+        listingInteraction.sendMessage('Hello');
+        expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/#/listing/24');
+    });
+    
+    it('should show sent message in sent messages', function () {
+        listingInteraction.verifyMessage();
+        expect(element(by.css('p')).getText()).toEqual('Hello');
+    });
+
     it('should delete a listing', function () {
         listingInteraction.deleteListing();
         expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/#/listings/');
     });
 
-    it('should report an inappropriate listing', function () {
-        listingInteraction.sendReport('Inappropriate content');
-        expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/#/listing/11');
-    });
-    
-    it('should send a message to a user', function () {
-        listingInteraction.sendMessage('Hello');
-        expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/#/listing/11');
+    afterAll(function(){
+        loginPage.logout();
     });
 });

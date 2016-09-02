@@ -7,6 +7,7 @@ exports.config = {
         "./login-page/login.spec.js",
         "./new-listing-page/newlisting.spec.js",
         "./listing-interaction/listinginteraction.spec.js",
+        "./received-messages-page/receivedmessages.spec.js",
         "./profile-page/profilepage.spec.js",
         "./admin-page/adminpage.spec.js",
         "./admin-reports-page/adminreportspage.spec.js",

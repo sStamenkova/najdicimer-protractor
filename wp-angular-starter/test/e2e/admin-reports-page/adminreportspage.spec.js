@@ -43,4 +43,9 @@ describe('Admin Reports Page Test', function () {
         adminReportsPage.deleteReportedListing();
         expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/admin/#/reports');
     });
+
+    afterAll(function(){
+        browser.get('http://localhost:8000/#/');
+        loginPage.logout();
+    });
 });

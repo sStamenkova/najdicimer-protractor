@@ -86,7 +86,7 @@ WPAngularStarter.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state("outbox", {
             url: "/messages/outbox",
-            templateUrl: "views/user/messages.html",
+            templateUrl: "views/user/messages-outbox.html",
             controller: "SentMessageController"
         })
         .state("readMessage", {
