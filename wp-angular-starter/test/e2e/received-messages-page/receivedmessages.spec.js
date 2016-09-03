@@ -21,16 +21,16 @@ describe('Received Messages Page Tests', function () {
         receivedMessagesPage.get();
     });
     
-    it('should mark a message as read', function () {
-        var message = element.all(by.repeater('message in messages')).first();
-        receivedMessagesPage.markAsRead();
-        expect(message.getAttribute('class')).not.toContain('well');
-    });
-    
     it('should mark a message as unread', function () {
         var message = element.all(by.repeater('message in messages')).first();
         receivedMessagesPage.markAsUnread();
         expect(message.getAttribute('class')).toContain('well');
+    });
+
+    it('should mark a message as read', function () {
+        var message = element.all(by.repeater('message in messages')).first();
+        receivedMessagesPage.markAsRead();
+        expect(message.getAttribute('class')).not.toContain('well');
     });
     
     it('should read a message', function () {

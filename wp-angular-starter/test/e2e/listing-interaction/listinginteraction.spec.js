@@ -46,12 +46,12 @@ describe('Listing Interaction Tests', function () {
 
     it('should report an inappropriate listing', function () {
         listingInteraction.sendReport('Inappropriate content');
-        expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/#/listing/24');
+        expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/#/listing/28');
     });
     
     it('should send a message to a user', function () {
         listingInteraction.sendMessage('Hello');
-        expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/#/listing/24');
+        expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/#/listing/28');
     });
     
     it('should show sent message in sent messages', function () {
