@@ -1,4 +1,3 @@
-//jshint strict: false
 exports.config = {
 
     specs: [

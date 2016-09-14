@@ -22,3 +22,6 @@ In order to run the protractor tests, navigate in the wp-angular-starter folder 
 
     npm run protractor
 This will run the tests and provide their output on the command line.
+
+## Requirements
+In order for the tests to run correctly, in your local database you need to have one admin user, at least one listing created by one of the users and you need to enter the correct credentials for the users when using the login function in the tests.

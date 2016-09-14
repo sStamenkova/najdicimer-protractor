@@ -31,3 +31,4 @@ describe('Home Page Tests', function(){
        expect(browser.getCurrentUrl()).toEqual('http://localhost:8000/#/listings/');
     });
 });
+
